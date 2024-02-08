@@ -1,0 +1,527 @@
+/* Flexible box layout
+
+adalah model layout satu dimensi guna menyusun elemen-elemen (flex items) dalam posisi rows atau columns. 
+Hal ini membuat flexbox disebut dengan direction-agnostic atau mengatur tata letak di banyak arah. 
+Hal menarik dari flexbox adalah ia menawarkan penyusunan layout dengan fleksibel karena flex container atau 
+flexbox dapat mengatur dimensi setiap flex-items (child element) sehingga layout yang diinginkan dapat tercapai 
+dengan mudah
+
+Flex container memperluas flex items untuk mengisi ruang kosong atau menciutkannya sehingga menghindari overflow 
+(dimensi child element yang keluar dari parent element-nya). Dengan hadirnya flexbox, perancangan layout dalam 
+skala yang kecil dapat dilakukan dengan mudah pada halaman web.
+
+
+Berikut beberapa konsep dari flexbox yang perlu kita ketahui:
+
+-Dapat mengubah ukuran dimensi elemen dengan menyesuaikan ukuran yang cocok bagi ruang kosong yang ada pada 
+container-nya.
+
+-Flexbox is directional agnostic. ini berbeda dengan konsep block model di mana elemen selalu ditampilkan secara 
+vertikal dengan membuat baris baru. Ini berbeda pula dengan konsep inline model di mana elemen selalu ditampilkan 
+secara horizontal. Dengan flexbox kita dapat melakukan kedua hal tersebut dengan mudah.
+
+-Dibuat untuk menyusun layout yang mobile friendly.
+
+
+
+Alasan Flexbox Hadir
+Sebelum hadirnya flexbox, satu-satunya cara untuk membuat layout halaman web adalah float dan positioning. 
+Dengan menggunakan kedua properti CSS tersebut, kita sudah bisa membuat layout yang kita inginkan, 
+baik pada layar desktop maupun mobile. Namun, dalam beberapa kasus, penggunaan kedua properti CSS ini terbatas 
+dan menyulitkan.*/
+
+/* Display
+Dalam modul sebelumnya, kita telah menggunakan properti display untuk mengatur sifat elemen dengan value block dan 
+inline. Nah, kali ini, jika kita ingin mendefinisikan elemen agar disusun sebagai flexible box, 
+kita dapat menggunakan properti yang sama.
+
+.container {
+  display: flex;
+} 
+*/
+
+
+/*
+Flex Direction  
+
+Dalam materi sebelumnya, kita telah memahami bahwa flex items akan disusun sesuai main-axis (arah sumbu utama). 
+Pada dasarnya, flexbox mengatur elemen secara satu dimensi (terlepas dari permasalahan wrapping). 
+Dengan begitu, untuk menentukan arah susunan flex items, kita bisa definisikan menggunakan properti flex-direction. 
+Secara default, value ini adalah row.
+
+.container {
+  display: flex;
+  flex-direction: row | row-reverse | column | column-reverse;
+}
+
+Berikut adalah penjelasan value dari properti flex-direction.
+
+-Row: flex items akan disusun secara horizontal dari kiri ke kanan.
+
+-Row-reverse: flex items akan disusun secara horizontal, tetapi berarah terbalik (kanan ke kiri).
+
+-Column: flex items akan disusun secara vertikal dari atas ke bawah.
+
+-Column-reverse: flex items akan disusun secara vertikal, tetapi dengan arah terbalik (bawah ke atas).*/
+
+main .flex {
+    background-color: lightgrey;
+  
+    height: 50vh;
+  }
+  
+  .flex {
+    display: flex;
+    
+    /* Silakan coba seluruh nilainya */
+    flex-direction: row;
+    /*flex-direction: row-reverse;*/
+    /*flex-direction: column;*/
+    /*flex-direction: column-reverse;*/
+  }
+
+
+  /* Flex Wrap
+  
+  dari parent element disusun menggunakan flexbox, flex items akan selalu diletakkan dalam satu baris (satu dimensi). 
+  Dengan properti flex-wrap, kita bisa mengubah perilakunya menjadi dua dimensi (jika dibutuhkan). 
+  Secara bawaan, value dari properti ini adalah nowrap. 
+
+.container {
+  display: flex;
+  flex-wrap: nowrap | wrap | wrap-reverse;
+}
+Berikut adalah penjelasan setiap value dari properti flex-wrap.
+
+-nowrap: seluruh flex items hanya akan ditempatkan dalam satu baris meskipun sangat banyak jumlahnya.
+
+-wrap: nilai ini menyebabkan flex items akan diletakkan ke baris yang baru (berikutnya) sehingga menjadi multiple lines.
+
+-wrap-reverse: meskipun mirip dengan wrap, nilai ini akan menyebabkan beberapa flex items ditempatkan dengan menambahkan baris sebelumnya.*/
+
+.box {
+    width: 200px;
+    height: 100px;
+    
+    margin-bottom: 8px;
+  }
+  
+  .box:nth-child(odd) {
+    background-color: salmon;
+  }
+  
+  .box:nth-child(even) {
+    background-color: lime;
+  }
+  
+  .flex {
+    display: flex;
+    
+    /* Silakan coba seluruh nilainya */
+    flex-wrap: nowrap;
+    /*flex-wrap: wrap;*/
+    /*flex-wrap: wrap-reverse;*/
+  }
+
+
+  /* Justify Content
+  
+  .container {
+  display: flex;
+  justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+}
+Berikut adalah penjelasan setiap value dari properti justify-content.
+
+-Flex-start: peletakan child element akan dimulai dari main-start.
+
+-Flex-end: peletakan child element dimulai dari main-end.
+
+-Center: child element akan diletakkan di tengah parent child.
+
+-Space-between: child element akan tersusun secara merata, elemen pertama berada di tepi main-start 
+ dan elemen kedua berada di tepi main-end. Jika child element lebih dari dua, elemen lainnya akan didistribusikan 
+ berada di tengah dengan jarak yang sama.
+
+-Space-around: setiap child element akan memiliki panjang celah yang sama pada sisi horizontal.
+
+-Space-evenly: setiap child element akan memiliki jarak yang setara, termasuk jarak ke tepi main-start dan main-end.
+*/
+
+.box {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .box:nth-child(odd) {
+    background-color: salmon;
+  }
+  
+  .box:nth-child(even) {
+    background-color: lime;
+  }
+  
+  .flex {
+    display: flex;
+    
+    /* Silakan coba seluruh nilainya */
+    justify-content: flex-start;
+    /*justify-content: flex-end;*/
+    /*justify-content: center;*/
+    /*justify-content: space-between;*/
+    /*justify-content: space-around;*/
+    /*justify-content: space-evenly;*/
+  }
+
+
+  /* Align Items
+  
+  container {
+  display: flex;
+  align-items: stretch | flex-start | flex-end | center | baseline;
+}
+Berikut adalah penjelasan setiap value dari properti align-items.
+
+-Stretch: melebar hingga memenuhi container dalam cross axis. Setiap child element akan memiliki nilai height yang 
+ sama, meskipun isi konten berbeda.
+
+-Flex-start: setiap child element akan memiliki ukuran height sesuai dengan isi konten serta seluruhnya akan berada 
+ di tepi cross-start.
+
+-Flex-end: setiap child element akan memiliki ukuran height sesuai dengan isi konten serta seluruhnya akan berada 
+ di tepi cross-end.
+
+-Center: setiap child element memiliki ukuran height sesuai dengan isi konten dan secara vertikal posisi elemen 
+ berada di tengah.
+
+-Baseline: nilai pada asalnya akan menyerupai flex-start. Namun, jika konten pertama pada masing-masing child 
+ element memiliki ukuran height yang berbeda, child element lainnya akan menyesuaikan posisinya secara cross axis 
+ dari cross-start.
+  */
+
+
+  /* Align Content
+  
+  Properti ini melakukan perataan terhadap flex items pada setiap baris dalam cross-axis. Tingkah laku properti 
+  ini hampir mirip dengan properti justify-content yang mengatur tata letak flex items di sisi main axis.
+
+Hal yang perlu diperhatikan adalah penggunaan properti ini hanya akan berpengaruh pada multi-line flex 
+container dan properti flex-wrap dilibatkan. Flex container yang hanya memiliki single line tidak akan memiliki 
+efek diterapkannya properti align content.
+
+.container {
+  display: flex;
+  align-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+}
+
+Berikut adalah penjelasan setiap value dari properti ini.
+
+-Normal (default): Jika kita tidak menerapkan value pada align content, flex items akan diposisikan secara default.
+
+-Flex-start: flex items ditata pada permulaan flex container.
+
+-Flex-end: flex items ditata pada akhir flex container.
+
+-Center: flex items diposisikan di tengah flex container.
+
+-Space-between: flex items akan disebar secara merata, item pertama akan diposisikan pada cross-start dan item 
+ terakhir akan diposisikan pada cross-end.
+
+-Space-around: flex items akan disebar secara merata dengan jarak celah yang sama juga.
+
+-Space-evenly: flex items akan disebar secara merata dengan jarak yang merata juga.*/
+
+.box {
+    width: 100px;
+    /*height: 100px;*/
+  }
+  
+  .box:nth-child(odd) {
+    background-color: salmon;
+  }
+  
+  .box:nth-child(even) {
+    background-color: lime;
+  }
+
+  .flex {
+    background-color: lightgrey;
+    height: 50vh;
+    display: flex;
+    
+    /* Align content hanya bekerja saat membentuk multi-lines*/
+    flex-wrap: wrap;
+    
+    /* Silakan coba seluruh nilainya */
+    align-content: flex-start;
+  /*   align-content: flex-end; */
+    /*align-content: center;*/
+    /*align-content: space-between;*/
+    /*align-content: space-around;*/
+    /*align-content: space-evenly;*/
+  }
+
+  
+  /* Gap (Celah) 
+  
+  memberikan jarak atau celah pada flex items. Biasanya kita akan mengandalkan properti margin dalam hal ini. 
+  Namun, ada cara yang lebih efektif, yaitu menggunakan properti gap. */
+
+.container {
+  display: flex;
+  gap: 1rem; /* diterapkan secara vertikal dan horizontal dengan nilai yang sama */
+  gap: 1rem 2rem; /* diterapkan secara vertikal dan horizontal */
+  row-gap: 1rem; /* diterapkan secara horizontal */
+  column-gap: 1rem; /* diterapkan secara vertikal */
+}
+
+/* contoh */
+
+.box {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .box:nth-child(odd) {
+    background-color: salmon;
+  }
+  
+  .box:nth-child(even) {
+    background-color: lime;
+  }
+  
+  .flex {
+    display: flex;
+    
+    flex-wrap: wrap;
+    
+    /* Silakan coba seluruh nilainya */
+    gap: 16px;
+    /*gap: 16px 24px;*/
+    /*row-gap: 16px;*/
+    /*column-gap: 24px;*/
+  }
+
+
+  /* Secara asalnya, flex items akan diletakkan sesuai dengan urutan penulisan kode. Namun, dengan properti order, 
+  kita bisa mengatur urutan susunan flex items. */
+  .item {
+    order: 5; /* default is 0 */
+  }
+
+  /* contoh */
+
+  .box {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .box:nth-child(odd) {
+    background-color: salmon;
+  }
+  
+  .box:nth-child(even) {
+    background-color: lime;
+  }
+  
+  .flex {
+    display: flex;
+    
+    gap: 8px;
+  }
+
+  /* Silakan ubah nilai-nilai `order` berikut. */
+.box1 {
+    order: 0;
+  }
+  
+  .box2 {
+    order: 0;
+  }
+  
+  .box3 {
+    order: 0;
+  }
+  
+  .box4 {
+    order: 0;
+  }
+  
+  .box5 {
+    order: 0;
+  }
+
+  
+  /* Flex Grow
+  
+  Ketika kita membuat layout dengan flexbox, flex item akan dijajarkan serta memiliki lebar sesuai dengan ukuran 
+  kontennya. Bisa saja flex container akan meninggalkan sisa ruang meski ukuran konten dari flex items tidak 
+  memenuhi flex container.
+
+Jika Anda tidak nyaman dengan layout seperti ini, kita dapat mengatur flex items agar selalu memenuhi flex container. 
+Di sinilah peran properti flex-grow. Properti ini akan melakukan grow pada main axis sehingga tidak akan menyisakan 
+ruang kosong pada flex container.
+
+Flex grow akan melakukan pendistribusian sisa ruang dalam container kepada seluruh child element dengan porsi yang 
+sama (adil). Jika salah satu child element memiliki flex grow dengan nilai dua, child element tersebut akan 
+mendapatkan pembagian porsi dua kali lebih besar dibanding child element yang hanya memiliki satu porsi. 
+Nilai yang diberikan pada properti ini adalah angka tanpa satuan (unitless).
+*/
+
+.item {
+    flex-grow: 1; /* default is 0 */
+  }
+
+  /* contoh */
+  .box {
+    height: 100px;
+  }
+  
+  .box:nth-child(odd) {
+    background-color: salmon;
+  }
+  
+  .box:nth-child(even) {
+    background-color: lime;
+  }
+  
+  .flex {
+    display: flex;
+    
+    gap: 8px;
+  }
+  
+/* Silakan ubah nilai-nilai `flex-grow` berikut. */
+.box1 {
+    flex-grow: 2;
+  }
+  
+  .box2 {
+    flex-grow: 0;
+  }
+  
+  .box3 {
+    flex-grow: 1;
+  }
+
+
+
+  /* Flex Shrink
+Properti ini memiliki kemampuan untuk menyusutkan atau menciutkan ukuran child element jika ukurannya tidak 
+mencukupi ruang container. Nilai yang diberikan pada properti ini adalah angka tanpa satuan (unitless).
+
+Secara default, nilai dari properti ini adalah 1. Jika kita memberikan nilai 0, ukuran child element tidak akan 
+menciut. */
+
+.item {
+    flex-shrink: 0; /* default is 1 */
+  }
+
+  /* contoh */
+  [class^=shrink] {
+    display: flex;
+  }
+  
+  .shrink-1 .box {
+    background-color: salmon;
+  
+    flex-shrink: 1;
+  }
+  
+  .shrink-0 .box {
+    background-color: lime;
+  
+    flex-shrink: 0;
+  }
+
+
+
+  /* Flex Basis
+Properti ini akan memberikan ukuran default sebelum sisa ruang container didistribusikan kepada flex items. 
+Nilai yang didukung untuk properti ini terkait ukuran dimensi (width dan height), yaitu 2rem, 20%, dan lainnya.
+*/
+
+.item {
+    flex-basis: 1rem , 25% , auto; /* default is auto */
+  } 
+
+  /* contoh */
+
+  .box {
+    height: 100px;
+  }
+  
+  .box:nth-child(odd) {
+    background-color: salmon;
+  }
+  
+  .box:nth-child(even) {
+    background-color: lime;
+  }
+  
+  .flex {
+    padding: 8px;
+    background-color: lightgrey;
+  
+    width: 300px;
+    display: flex;
+    
+    gap: 8px;
+  }
+
+.box1 {
+    flex-basis: 100px;
+  }
+  
+  .box2 {
+    flex-basis: 150px;
+  }
+  
+  .box3 {
+    flex-basis: 100px;
+  }
+  
+
+
+  /* Align Self
+ Properti ini memiliki tingkah laku yang sama dengan properti align items. Properti ini dapat mengatur posisi 
+ child element secara cross-axis. Namun, properti ini hanya berlaku untuk child element. Jika kita ingin 
+ mengecualikan child element di antara child element lainnya, gunakanlah properti ini.
+  */
+
+  .items {
+    align-self: auto , flex-start , flex-end , center , baseline , stretch; /* default is auto */
+  }
+
+  /* contoh */
+
+  .box:nth-child(odd) {
+    background-color: salmon;
+  }
+  
+  .box:nth-child(even) {
+    background-color: lime;
+  }
+  
+  .flex {
+    padding: 8px;
+    background-color: lightgrey;
+  
+    width: 300px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  
+    gap: 8px;
+  }
+  
+  [class^=box] {
+    flex-basis: 100px;
+  }
+  
+  .box1 {
+    align-self: flex-end;
+  }
+  
+  .box3 {
+    align-self: flex-start;
+  }

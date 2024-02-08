@@ -1,0 +1,305 @@
+/* Formatting Text 
+Font Styling: Font Family dan Font Size\
+
+font-family: menetapkan jenis font yang akan diterapkan pada target.
+font-size: menentukan ukuran pada teks.
+font-weight: menentukan ketebalan pada teks. 
+font-style: menetapkan styling yang diterapkan pada teks.
+font-variant: menentukan teks untuk menggunakan gaya small caps (huruf kapital kecil).
+font: sebagai shorthand dari properti font yang ada.*/
+
+
+/* Font-family */
+body {
+    font-family: sans-serif;
+  }
+  /* Pada rule tersebut, kita mengubah standar font yang digunakan browser dengan font ‘sans-serif’. 
+  Sebenarnya untuk nilai dari properti ini dapat lebih dari satu (dikenal sebagai font stack), 
+  tujuannya adalah sebagai fallback jika terjadi kegagalan dalam menggunakan font yang kita gunakan. */
+
+p {font-family: "Open Sans", Verdana, Sans-serif;}
+
+/* Seluruh nilai font yang bukan merupakan generic font families harus dituliskan secara kapital. Contohnya, 
+"Verdana” bukan dituliskan "verdana”.
+Gunakan tanda koma (,) untuk memisahkan antara nilai font yang digunakan. 
+Selalu tanda kutip (“) untuk membungkus nilai font yang memiliki spasi pada namanya. Contohnya “Open Sans”. 
+
+
+Berikut adalah nilai-nilai generic font families yang dapat kita gunakan untuk fallback mechanism.
+
+Serif: jenis font yang memiliki runcing pada garis akhir karakternya. Times New Roman merupakan salah satu jenis serif font.
+Sans-serif: jenis font yang tidak meruncing pada garis akhir karakternya. Contohnya, “Open Sans”, “Fira Sans” dan lainnya.
+Monospace: jenis font yang memiliki nilai lebar tiap karakternya sama. Consolas merupakan salah satu jenisnya.
+Cursive: jenis font yang tampak seperti handwriting atau hasil tulisan tangan.
+Fantasy: jenis font yang merepresentasikan karakteristik yang menyenangkan.
+System-ui: jika menerapkan nilai ini maka font yang diterapkan akan sama seperti font yang digunakan pada sistem operasi kita.
+Math: jenis font yang digunakan untuk penulisan rumus-rumus matematika.
+Emoji: jenis font yang digunakan untuk menampilkan emoji.
+Fangsong: jenis font yang menampilkan gaya penulisan Chinese.*/
+
+/* @font-face
+
+CSS memiliki fitur yang digunakan untuk memasukkan font eksternal ke dalam CSS, yakni menggunakan @font-face. 
+Berikut adalah contoh penulisan @font-face pada CSS.*/
+@font-face {
+    font-family: "Dicoding Font";
+    src: url('FILE-FONT.TTF');
+  }
+
+  /*Setelah mendefinisikan font-face tersebut, ada nilai font-family baru bernilai “Dicoding Font” untuk 
+  diterapkan pada elemen HTML.*/
+  p {
+    font-family: "Dicoding Font";
+  }
+
+  /* Font-size
+Mengubah nilai font pada sebuah dokumen adalah hal yang sangat wajar terjadi, begitu pula pada website. 
+Untuk menetapkan ukuran font, kita perlu menerapkan properti font-size dengan menetapkan nilai dari properti ini 
+dengan menuliskan langsung nilai dan satuannya. */
+h1 {
+    font-size: 1.5em;
+  }
+
+  /* Satuan dalam menetapkan ukuran font terbagi dua jenis.
+- Relative Unit
+Satuan yang nilainya tergantung pada suatu hal. Contohnya, ukuran viewport, induk elemen, atau ukuran teks standar.
+- Absolute Unit
+Satuan yang nilainya telah ditentukan atau digunakan dalam dunia nyata. 
+
+
+Relative Unit
+
+
+Satuan	Relative to	Fungsi 
+em
+
+Font size
+
+Satuan relatif terhadap ukuran font yang sedang digunakan pada elemen (contohnya, 2em berarti 2 kali lebih besar dari ukuran font seharusnya).
+
+ex
+
+Font height
+
+Satuan relatif terhadap tinggi font saat ini, satuan ini sangat jarang sekali digunakan
+
+rem
+
+Font size
+
+Mirip seperti em, tetapi rem merupakan satuan relatif terhadap ukuran font dari root element.
+
+ch
+
+Font width
+
+Satuan relatif terhadap lebar dari karakter “0” nol.
+
+vw
+
+Viewport width
+
+Satuan relatif terhadap 1% lebar viewport. Contoh 1vw = 1% dari lebar viewport. Satuan ini tidak didukung pada browser IE8 ke bawah.
+
+vh
+
+Viewport height
+
+Satuan relatif terhadap 1% tinggi viewport. Contoh 1vh = 1% dari tinggi viewport. Satuan ini tidak didukung pada browser IE8 ke bawah.*/
+
+/*
+Absolute Unit
+
+
+Satuan	Fungsi
+px
+
+Menetapkan nilai font berdasarkan ukuran pixel.
+
+pt
+
+Menetapkan nilai font berdasarkan points (1/72 inch di CSS2.1).
+
+pc
+
+Menetapkan nilai font berdasarkan picas (1 pica = 12 point).
+
+mm
+
+Menetapkan nilai font berdasarkan millimeters.
+
+cm 
+
+Menetapkan nilai font berdasarkan centimeters.
+
+in
+
+Menetapkan nilai font berdasarkan inches.*/
+
+
+
+/* Selain dengan menetapkan nilai dan satuannya secara langsung, kita juga bisa menggunakan nilai persentase untuk 
+mengatur ukuran font. */
+
+body {
+    font-size: 16px;
+  }
+   
+  h1 {
+    font-size: 150%; /* 150% dari 16 = 24px */
+  }
+
+/*
+Pada contoh di atas, ukuran font dari elemen <h1> seharusnya memiliki ukuran 16px karena mewarisi dari induk 
+elemennya (body). Namun, di bawahnya terdapat rule yang menargetkan secara spesifik untuk elemen h1 untuk 
+menerapkan ukuran font sebesar 150% dari ukuran induknya. Dampaknya, elemen <h1> akan tampak 50% lebih besar 
+dari elemen lain yang ada di dalam body.
+
+Hal yang terakhir, kita juga bisa menentukan ukuran font dengan menuliskan kata kunci secara spesifik yang tersedia 
+pada CSS. Kata kunci tersebut: xx-small, x-small, small, medium, large, x-large, dan xx-large.
+
+Kata kunci di atas tidak ada kaitannya dengan pengukuran tertentu (bukan ukuran yang absolute), 
+tetapi nilainya diubah secara konsisten satu sama lain.
+
+urutan ukurannya :
+xx-small, < x-small, < small, < medium, < large, < x-large, < xx-large*/
+
+
+/*
+Font Styling: Font Weight, Font Style, Font Variant, dan Shorthand 
+
+
+Font-weight 
+ font-weight yang digunakan untuk mengatur ketebalan dari font yang ditampilkan. Nilai dari properti ini dapat 
+ ditentukan dengan menggunakan numeric values (100 sampai 900) atau dengan menggunakan descriptive terms 
+ (normal, bold, bolder, dan lighter).
+ Properti font-weight dapat diaplikasikan ke seluruh elemen yang ada di HTML dan nilainya dapat diturunkan pada 
+ elemen turunannya.*/
+
+ .normal {
+  font-weight: normal;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+.lighter {
+  font-weight: lighter;
+}
+
+.fw100 {
+  font-weight: 100;
+}
+
+.fw200 {
+  font-weight: 200;
+}
+
+.fw300 {
+  font-weight: 300;
+}
+
+.fw400 {
+  font-weight: 400;
+}
+
+.fw500 {
+  font-weight: 500;
+}
+
+.fw600 {
+  font-weight: 600;
+}
+
+.fw700 {
+  font-weight: 700;
+}
+
+.fw800 {
+  font-weight: 800;
+}
+
+.fw900 {
+  font-weight: 900;
+}
+
+
+/*
+Font-style
+Properti selanjutnya adalah font-style, properti ini digunakan untuk menentukan postur dari teks yang ditampilkan, 
+yakni bentuknya vertikal (normal) atau miring (italic dan oblique).
+
+Properti font-style dapat diaplikasikan ke seluruh elemen yang ada di HTML dan nilainya dapat diturunkan pada 
+elemen turunannya.
+*/
+
+.normal {
+  font-style: normal;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.oblique {
+  font-style: oblique;
+}
+
+
+
+/*
+Font-variant
+Kita yang terbiasa dengan aplikasi document editor seperti Microsoft Word tentu tahu atau sudah mencoba fitur 
+small caps. Fitur ini dapat membuat teks menjadi kapital tetapi dituliskan secara kecil dan merapat seperti berikut.
+
+Properti font-variant dapat diaplikasikan ke seluruh elemen yang ada di HTML dan nilainya dapat diturunkan pada 
+elemen turunannya.
+*/
+h1 {
+  font-variant: small-caps;
+}
+
+
+
+
+/*
+Shorthand
+Menspesifikasikan masing-masing nilai properti font akan menghasilkan banyak sekali kode repetitif. 
+CSS memiliki properti CSS yang biasa disebut dengan shorthand properti. Ia memberikan suatu “jalan pintas” 
+untuk menuliskan properti-properti tersebut ke dalam satu properti, yaitu font. 
+
+Dengan menggunakan properti font, kita dapat menuliskan beberapa properti hanya dalam satu properti pada satu rule.
+
+target {font : style weight variant size font-family}
+
+kita bisa tidak menuliskan seluruh nilai properti yang ada, tetapi nilai dari properti font-size dan font-family 
+wajib ada ketika menggunakan properti ini*/
+p {
+  font: 1em sans-serif;
+}
+
+
+
+/*
+Custom Font dengan Google Fonts
+Google Fonts adalah salah satu layanan yang menyediakan tipe font dengan sangat beragam dan memudahkan kita 
+dalam mendesain font pada website. Google Fonts banyak menyediakan tipe font gratis dan open-source yang dapat 
+kita manfaatkan. Saat materi ini ditulis, Google Fonts menyediakan lebih dari 1500 jenis font.
+
+caranya 
+
+buka font.google.font 
+ 
+pilih font yang diinginkan 
+
+salin link font, pada head di html 
+
+gunakan nama font-family pada css*/
+
+
+/* semua element bisa lihat lebih jelas dan lengkap , di website MDN Mozhila dan W3School */

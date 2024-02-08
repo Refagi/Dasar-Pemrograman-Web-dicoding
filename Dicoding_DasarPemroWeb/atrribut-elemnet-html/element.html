@@ -1,0 +1,980 @@
+Doctype HTML
+Sederhananya, doctype dimaksudkan sebagai format atau versi HTML dan berisi sekumpulan aturan-aturan 
+yang perlu diikuti dalam membangun halaman web yang baik. Pada waktu lampau, dokumen HTML disusun seperti berikut.
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+Versi HTML yang digunakan dari kode di atas adalah 4. Selain itu, penulisannya pun sangat panjang dan sulit dihafal. 
+Sekarang, kita dapat menggunakan HTML versi 5 dengan cara yang sangat mudah dan valid.
+
+<!DOCTYPE html>
+
+Element <head></head>
+
+<!-- <title> 
+<style>
+<base>
+<link>
+<meta>
+<script>
+<noscript> -->
+
+
+Pada HTML versi 4.01, elemen <head> wajib ada dalam sebuah berkas HTML. 
+Berikut adalah contoh pembuatan elemen <head> beserta kontennya
+
+    <head>
+        <meta charset="utf-8">
+        <title>Judul Halaman Anda</title>
+        <style>
+          /* Kode CSS anda */
+        </style>
+      </head>
+
+Namun, penggunaan <head> dapat dihilangkan sejak HTML5. Jadi, struktur dasar berkas HTML menjadi seperti berikut.
+
+        <!DOCTYPE html>
+        <html>
+          <meta charset="utf-8">
+          <title>Judul Halaman</title>
+          <style>
+            /* style */
+          </style>
+         
+          <body>
+            <h1>Judul Utama</h1>
+            <p>Sebuah paragraf</p>
+          </body>
+        </html>
+
+Lorem Ipsum Generator :
+Lorem ipsum adalah teks standar yang ditempatkan untuk mendemonstrasikan elemen grafis atau presentasi visual, 
+seperti font, tipografi, dan tata letak. Tujuan penggunaan lorem ipsum sebagai berikut.
+        
+Sebagai pengisi sementara jika belum ada konten teks.
+Jika ingin menunjukkan hasil website sementara yang mana audiens diharapkan lebih fokus kepada elemen desain 
+yang dipresentasikan, bukan pada isinya (teks).
+
+
+
+img atau gambar
+
+Nama                               Ekstensi Format File       Keterangan
+
+Graphics Interchange Format              .gif                  Dapat digunakan untuk gambar animasi.
+                                                               Ukuran file biasanya kecil.
+                                                               Kualitas gambar terbata
+Joint Photographic Expert Group image  .jpg, .jpeg, .jfif, 
+                                       .pjpeg, .pjp            Kualitas teks pada gambar dapat menjadi buruk.
+                                                               Ukuran file lumayan kecil.
+                                                               Pada website biasanya digunakan untuk gambar yang tidak banyak teks.
+
+Portable Network Graphics             .png                     Teks lebih bisa terbaca dibandingkan jenis jpeg.
+                                                               Ukuran file dapat menjadi besar sehingga mengurangi kecepatan memuat situs.
+
+WebP                                  .webp                    Dibandingkan dengan gambar berkualitas sama pada jpeg atau png, ukuran file pada webp dapat menjadi lebih kecil.
+                                                               Namun, tidak semua web browser dapat membaca webp.
+
+Scalable Vector Graphics              .svg                     Kualitas gambar terjaga dan ukuran file kecil.
+                                                               Namun, tidak cocok untuk gambar yang terlalu kompleks, seperti foto.
+                                                               Pada website biasanya digunakan untuk logo atau ikon.
+
+
+                                                               Menambahkan Konten Gambar
+                                                               Sebagaimana telah dipelajari sebelumnya, elemen gambar bisa diciptakan dengan kode berikut.
+                                                               
+<img src="path/ke/sumber/gambar.jpg" alt="Teks alternatif untuk gambar">
+
+Absolute URL vs. Relative URL
+Dalam menentukan sumber gambar untuk elemen <img>, kita tidak wajib menerapkan absolute URL sebagaimana pada 
+materi sebelumnya. Itu disebabkan kita memanggil URL melalui suatu server lain sehingga perlu menyebutkan 
+alamat URL secara lengkap. Ini disebut sebagai absolute URL.
+
+Bagi yang memiliki gambar tersimpan secara lokal–tersimpan dalam satu folder proyek, kita dapat memanggil 
+sumber gambar tersebut menggunakan relative URL. Kita hanya perlu mengarahkan path yang sesuai relatif terhadap 
+letak index.html.
+
+
+
+Long Quotations
+Jika pada konten kita memiliki sebuah kutipan ataupun sebuah testimonial, kita dapat gunakan format long quotations 
+dengan menggunakan tags <blockquote>. Konten di dalam elemen <blockquote> ini dapat berupa sebuah paragraf, 
+heading, ataupun list.
+
+<blockquote cite="https://id.wikipedia.org/wiki/Situs_web">
+  <p>
+    Situs web (bahasa Inggris: website) adalah sekumpulan halaman web yang saling berhubungan yang
+    umumnya berada pada peladen yang sama berisikan kumpulan informasi yang disediakan secara
+    perorangan, kelompok, atau organisasi.
+  </p>
+</blockquote>
+
+
+Preformatted Text
+Pada modul sebelumnya, kita sudah mengetahui bahwa HTML akan mengabaikan spasi yang dituliskan secara 
+berulang dan juga line breaks (garis baru). Namun, pada beberapa tipe konten, seperti contoh kode atau puisi 
+hal tersebut sangat berarti.
+
+Dengan begitu, terdapat sebuah elemen yang dapat kita gunakan untuk menampilkan konten sesuai yang kita tulis 
+pada text editor. Untuk menggunakannya, kita gunakan elemen <pre> sebagai pembungkus kontennya. Perhatikan 
+contoh berikut.
+
+<pre>
+  SAJAK PUTIH
+
+Bersandar pada tari warna pelangi
+Kau depanku bertudung sutra senja
+Di hitam matamu kembang mawar dan melati
+Harum rambutmu mengalun bergelut senda
+
+Sepi menyanyi, malam dalam mendoa tiba
+Meriak muka air kolam jiwa
+Dan dalam dadaku memerdu lagu
+Menarik menari seluruh aku
+
+Hidup dari hidupku, pintu terbuka
+Selama matamu bagiku menengadah
+Selama kau darah mengalir dari luka
+Antara kita Mati datang tidak membelah...
+
+                  Karya: Chairil Anwar
+</pre>
+
+Figure
+Elemen <figure> digunakan untuk mempresentasikan konten tersendiri (self-contained content), seperti 
+  ilustrasi, diagram, foto, atau bisa juga sebuah baris kode. Banyak hal yang dapat digunakan dalam elemen ini. 
+
+Elemen ini digunakan untuk mengelompokkan blok konten yang dapat dipindahkan posisinya dari blok utama 
+sebuah dokumen tanpa mempengaruhi arti dari induk dokumen.
+
+Dalam elemen figure, kita dapat menuliskan elemen <figcaption> sebagai sebuah caption (judul) untuk konten tersebut.
+Berikut adalah contoh penggunaan figure pada sebuah konten gambar.
+
+<p>
+  Dicoding adalah sebuah perusahaan startup yang bertujuan mengembangkan ekosistem developer di
+  Indonesia. Berdiri sejak 5 Januari 2015, Dicoding memiliki platform pembelajaran elektronik di
+  laman Dicoding.com.
+</p>
+
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/dicodingacademy/a123-webdasar-labs/099-shared-files/shared-media/g-dicoding-logo.png"
+    alt="g Dicoding Logo"
+    width="200px"
+  />
+  <figcaption>Dicoding</figcaption>
+</figure>
+
+<p>
+  Materi perdana yang menjadi magnet dari awal berdirinya Dicoding hingga kini adalah kelas Menjadi
+  Android Developer Expert. Kelas ini dikembangkan oleh Google Developer Expert in Android, Sidiq
+  Permana dan Head of Dicoding Academy, Ahmad Imaduddin. Seperti halnya kelas Picodiploma lain,
+  modul online-nya juga hadir dalam bentuk buku berjudul sama yang telah mendapatkan ijin dan ISBN.
+</p>
+
+
+
+Inline Formatting Text: Anchor, Emphasized Text, Important Text, dan Short Quotation 
+
+Sebelum menjelaskan elemen inline untuk formatting text yang dapat digunakan, 
+sepertinya kita perlu membahas sekilas mengenai block dan inline.
+
+Pada standarnya, elemen HTML memiliki dua sifat, yaitu block dan inline. 
+Elemen yang bersifat block selalu membuat baris baru ketika di-render. Contohnya seperti elemen paragraf, 
+list, heading, dan lainnya. Lawan dari elemen tersebut, yaitu elemen inline. 
+Elemen ini tidak menambahkan baris baru ketika di-render. Apa saja elemen tersebut? Mari kita bahas satu persatu.
+
+Anchor
+Apa itu anchor? Anchor (jangkar) merupakan elemen yang digunakan untuk membuat sebuah hyperlink ke halaman 
+atau website lain, file, alamat email, atau URL lainnya. Untuk menggunakan elemen ini kita gunakan <a> sebagai tag 
+pembuka dan </a> sebagai tag penutup. Selain itu, ada atribut wajib agar elemen ini berfungsi dengan baik, 
+yaitu href untuk menetapkan sebuah target yang dituju. 
+
+<p>Hubungi kami di</p>
+<ul>
+  <li><a href="https://example.com">Website</a></li>
+  <li><a href="mailto:info@example.com">Email</a></li>
+  <li><a href="tel:+62123456">Telepon</a></li>
+  <li><a href="#address">Alamat</a></li>
+</ul>
+
+
+Atribut                              Nilai                                Deskripsi
+
+download                           filename                      Menginstruksikan browser untuk mengunduh pada URL yang ditetapkan daripada mengarahkannya.
+
+href                                 URL                         Menetapkan target yang akan diarahkan/unduh ketika pengguna menekan hyperlink.
+
+hreflang                         language_code                   Menetapkan bahasa dari dokumen target.
+
+ping                             list_of_URLs                    Menetapkan URL yang akan diberitahu dengan mengirimkan post request ping pada body oleh browser 
+                                                                (berjalan di belakang layar) ketika target URL pada hyperlink ditekan. 
+                                                                 Biasanya atribut ini digunakan untuk pelacakan.
+
+referrerpolicy                   no-referrer,                    Menetapkan referensi untuk dikirim pada target.
+                           no-referrer-when-downgrade,
+                           origin, origin-when-cross-origin,
+                           unsafe-url                        
+
+rel                      alternate, author, bookmark, external,     Menetapkan hubungan antara halaman yang ditampilkan dengan target.
+                         help, license,next, nofollow, noreferrer,
+                         noopener, prev, search, tag 
+
+target                   _blank, _parent, _self, _top             Menetapkan lokasi ketika membuka target contohnya pada sebuah tab, window, atau tab itu sendiri.
+
+media                     media_type                              Menetapkan tipe media yang digunakan pada target.
+
+
+
+Emphasized Text
+Gunakan elemen <em> untuk menunjukkan bagian kata yang perlu kita tekankan. Elemen ini menunjukkan stress 
+emphasis atau konten/kata yang perlu mendapatkan penekanan atau perhatian khusus. Berikut contoh penggunaannya.
+
+<p><em>Oding</em> adalah seorang pelajar</p>
+<p>Dia adalah seorang <em>pelajar</em></p>
+
+
+Important Text
+Gunakan elemen <strong> untuk menunjukkan sebuah teks yang begitu penting (strong importance), 
+serius ataupun mendesak. Artinya, teks tersebut harus dapat perhatian lebih dari teks biasa lainnya.
+
+<p>Kesehatan merupakan hal yang penting, jaga pola makan yang teratur dan 
+<strong>jangan sampai makan tengah malam!</strong></p>
+
+
+Short Quotations
+Gunakan elemen <q> untuk menandai sebuah kutipan dalam sebuah teks. Elemen ini berbeda dengan <blockquote>. 
+Elemen ini digunakan untuk kutipan pendek yang terletak di dalam baris (inline).
+
+<p>Sebelum pulang kerja, ia berkata kepadaku: <q>Maaf saya tidak bisa hadir dalam pertemuan nanti</q></p>
+memberikan tanda kutip ""
+
+
+Inline Formatting Text: Citation, Defining Terms, Subscript, Superscript, Highlighted Text, dan Line Break 
+
+Citation
+Selain sebuah atribut, <cite> juga merupakan sebuah elemen yang digunakan untuk sebuah rujukan pada sebuah dokumen, 
+contohnya sebuah buku, majalah, artikel, dan lainnya.
+Standarnya, pada browser sebuah teks yang diberi markup <cite> akan ditampilkan dengan huruf miring (italic).
+
+<p>Informasi selengkapnya bisa Anda dapatkan di <cite><a href="https://dicoding.com">dicoding.com</a></cite>.</p>
+
+
+
+Defining Terms
+Elemen <dfn> digunakan ketika mendefinisikan sebuah istilah (term). Elemen ini harus terletak pada elemen 
+lain yang menaunginya. Contohnya pada sebuah elemen <p> atau elemen <section>. Berikut contoh penggunaannya.
+
+Standar pada browser yakni sebuah teks yang diberi markup <dfn> akan ditampilkan dengan huruf miring (italic).
+
+  <p><dfn>Website</dfn> merupakan halaman yang menampilkan informasi melalui teks atau gambar. 
+    Website dapat diakses melalui internet dengan menggunakan browser.</p>
+
+
+
+Subscript dan Superscript
+Subscript <sub> dan superscript <sup> adalah elemen yang dapat membuat teks yang ditampilkan tampak kecil, 
+dengan posisi di bawah (sub) atau di atas (sup) dari teks biasanya. Elemen ini digunakan untuk menunjukkan 
+sebuah rumus kimia ataupun matematika
+
+<p>
+  Sukrosa merupakan suatu disakarida yang dibentuk dari monomer-monomernya yang berupa unit glukosa dan fruktosa, 
+  dengan rumus molekul C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>.
+</p>
+<p>Salah satu persamaan paling umum dalam semua fisika adalah E=MC<sup>2</sup></p>
+
+<!-- Sukrosa merupakan suatu disakarida yang dibentuk dari monomer-monomernya yang berupa unit glukosa dan fruktosa, 
+dengan rumus molekul C12H22O11.
+
+Salah satu persamaan paling umum dalam semua fisika adalah E=MC2 -->
+
+
+Highlighted Text
+Untuk menandai atau menyorot sebuah teks kita bisa menggunakan elemen <mark>. Elemen ini digunakan ketika
+terdapat sebuah teks yang memiliki peran penting, biasanya teks tersebut merupakan bagian yang paling relevan atau 
+penting dalam sebuah konteks kalimat.
+
+<p>hello ges nama saya <mark>Reno Faza Givaro</mark></p>
+Standarnya, pada browser teks yang diberi markup <mark> akan ditampilkan dengan background kuning dan teks hitam.
+
+
+Line Break
+Inline line break element (<br>) dapat digunakan untuk memberitahu browser untuk memberikan sebuah garis baru 
+pada baris teks. Sama seperti gambar, elemen ini merupakan elemen kosong sehingga kita tidak membutuhkan sebuah 
+tag penutup.
+
+<p>
+  Dicoding Space,<br>
+  Jln. Batik Kumeli No. 50.<br>
+  Bandung.<br>
+  40123
+</p>
+
+
+Semantic HTML: Header, Footer, Main, dan Nav
+
+Header dan Footer
+Sebuah header dan footer utama yang muncul pada awal dan akhir di sebuah halaman (<body>).
+
+Header: pengantar atau pembuka konten dalam sebuah elemen <article> atau <section>. 
+Footer: catatan kaki pada sebuah elemen <article> atau <section>.
+
+  <article>
+    <header>
+      <h1>Judul Artikel</h1>
+      <h2>Oleh: Dicoding Indonesia</h2>
+    </header>
+    <p>
+      <!-- ....... Konten artikel dimulai dari sini ...... -->
+    </p>
+    <footer>
+      <p>Bagikan artikel ini melalui</p>
+      <ul>
+        <li>Twitter</li>
+        <li>Facebook</li>
+        <li>
+          <!-- ...... -->
+        </li>
+      </ul>
+    </footer>
+  </article>
+
+
+
+  Main
+Element <main> digunakan untuk menampung/mewadahi konten utama (dominan) dalam <body>. 
+Konten main dapat terdiri dari banyak section, ataupun artikel, atau konten apa pun di dalam elemen main, 
+selama ia termasuk konten utama yang dimiliki oleh website.
+
+<body>
+  <header>
+    <!-- Konten header website -->
+  </header>
+  <main>
+    <!-- Konten utama website -->
+  </main>
+  <footer>
+    <!-- Konten footer website -->
+  </footer>
+</body>
+
+
+Nav
+Elemen <nav> digunakan untuk menampung sebuah navigasi yang sifatnya penting (mayor), 
+contohnya navigasi utama pada sebuah website.
+
+Pada pembahasan header dan footer, kita sudah melihat contoh penggunaan dari elemen <nav> yang 
+diletakkan pada elemen <header>. 
+
+  <nav>
+    <ul>
+      <li><a href="#sejarah">Sejarah</a></li>
+      <li><a href="#geografis">Geografis</a></li>
+      <li><a href="#wisata">Wisata</a></li>
+    </ul>
+  </nav>
+
+
+Semantic HTML: Articles, Aside, dan Section
+
+Articles
+Elemen <article> bertindak sebagai container untuk independent content pada sebuah halaman, 
+artinya konten utuh yang tidak terkait dengan konten lain, bisa saja sebuah artikel blog, komentar, 
+forum post dan konten lainnya.
+
+Elemen <article> dapat berada pada elemen <article> lainnya (nested) selama artikel tersebut berkaitan 
+dengan induk elemen <article> yang menampungnya.
+
+<article>
+  <h2>Sejarah</h2>
+  <img src="img/history.jpg">
+  <p>Kata Bandung berasal dari kata bendung atau bendungan karena terbendungnya sungai Citarum oleh lava Gunung 
+    Tangkuban Parahu yang lalu membentuk telaga...</p>
+</article>
+ 
+<article>
+  <h2>Geografis</h2>
+  <img src="img/geografis.jpg">
+  <p>Kota Bandung dikelilingi oleh pegunungan, sehingga bentuk morfologi wilayahnya bagaikan sebuah mangkok 
+    raksasa,[9] secara geografis kota ini terletak di tengah-tengah provinsi Jawa Barat..</p>
+</article>
+ 
+<article>
+  <h2>Wisata</h2>
+  <img src="img/farm-house.jpg">
+  <p>Sejak dibukanya Jalan Tol Cipularang, kota Bandung telah menjadi tujuan utama dalam menikmati liburan 
+    akhir pekan terutama dari masyarakat yang berasal dari Jakarta sekitarnya...</p>
+</article>
+
+
+
+Aside
+Elemen <aside> memiliki dua tujuan, tergantung kita menempatkannya di dalam sebuah elemen <article> atau tidak.
+
+Ketika elemen ini ditempatkan di dalam elemen <article>, elemen ini dapat berisi informasi yang berhubungan 
+dengan artikel tersebut, tetapi bukan bagian dari konten artikelnya itu sendiri (dipisahkan dari konten utama). 
+
+Ketika ditempatkan di luar elemen <article>, elemen ini dapat berisi informasi yang berhubungan pada keseluruhan 
+halaman.
+
+<main>
+  <article>
+    <!-- ...... -->
+  </article>
+ 
+  <aside>
+    <article>
+      <header>
+        <h2>Kota Bandung</h2>
+        <p>Kota Kembang Paris van Java</p>
+        <figure>
+          <img src="img/bandung-badge.png" />
+          <figcaption>Lambang</figcaption>
+        </figure>
+      </header>
+    </article>
+  </aside>
+</main>
+
+
+
+
+Section
+Sebuah elemen yang memiliki kesamaan konten dan sebuah heading di dalamnya dapat dikelompokkan dengan menggunakan 
+elemen <section>. Dengan begitu elemen ini dapat digunakan pada sebuah elemen <article> yang memiliki konten 
+panjang dan berpotensi untuk dikelompokkan.
+
+Dalam sebuah <section> sebaiknya terdapat elemen heading (h1-h6), yang menjadi elemen pertama yang dituliskan 
+pada sebuah section untuk menunjukkan judul atau tema dari bagian konten yang dikelompokkan.
+
+<article>
+  <section>
+    <h2>Wisata</h2>
+    <p>
+      Sejak dibukanya Jalan Tol Cipularang, kota Bandung telah menjadi tujuan utama dalam menikmati
+      liburan akhir pekan terutama dari masyarakat yang berasal dari Jakarta sekitarnya. Selain
+      menjadi kota wisata belanja, kota Bandung juga dikenal dengan sejumlah besar bangunan lama
+      berarsitektur peninggalan Belanda.
+    </p>
+  </section>
+  <section>
+    <h3>Farm House Lembang</h3>
+    <img src="img/farm-house.jpg" />
+    <p>
+      Kota Bandung dikelilingi oleh pegunungan, sehingga bentuk morfologi wilayahnya bagaikan sebuah
+      mangkok raksasa,[9] secara geografis kota ini terletak di tengah-tengah provinsi Jawa Barat,
+      serta berada pada ketinggian ±768 m di atas permukaan laut, dengan titik tertinggi di berada
+      di sebelah utara dengan ketinggian 1.050 meter di atas permukaan laut dan sebelah selatan
+      merupakan kawasan rendah dengan ketinggian 675 meter di atas permukaan laut.
+    </p>
+  </section>
+  <section>
+    <h3>Observatorium Bosscha</h3>
+    <img src="img/bosscha.jpg" />
+    <p>
+      Memiliki beberapa teleskop, antara lain, Refraktor Ganda Zeiss, Schmidt Bimasakti, Refraktor
+      Bamberg, Cassegrain GOTO, dan Teleskop Surya. Refraktor Ganda Zeiss adalah jenis teleskop
+      terbesar untuk meneropong bintang. Benda ini diletakkan pada atap kubah sehingga saat teropong
+      digunakan, atap tersebut harus dibuka. Observatorium Bosscha boleh dikunjungi oleh siapa pun,
+      tanpa tiket. Namun, bagi yang ingin menggunakan teleskop Zeiss, wajib mendaftarkan diri. Untuk
+      instansi atau lembaga pendidikan, diberikan jadwal hari Selasa sampai Jumat. Sementara itu,
+      kunjungan individu dibuka setiap hari Sabtu.
+    </p>
+  </section>
+</article>
+
+
+
+Generic Element
+
+Div
+Pertama, elemen <div>, elemen ini merupakan sebuah wadah (container) yang bersifat umum untuk menampung 
+beberapa konten. Elemen ini tidak akan memberikan efek apa pun pada konten atau layout sebelum menerapkan sebuah 
+style menggunakan CSS.
+
+Elemen <div> tidak merepresentasikan apa pun sebagai sebuah wadah yang murni. Elemen ini lebih sering digunakan 
+untuk mengelompokkan sebuah konten sehingga dapat memudahkan styling dengan menggunakan atribut class atau id.
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Div Element</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="shadowbox">
+      <p>
+        Paragraf ini berada di dalam elemen div, tetapi ia akan ditampilkan sama seperti paragraf
+        biasanya. Elemen ini lebih sering digunakan untuk mengelompokkan sebuah konten sehingga
+        dapat memudahkan styling dengan menggunakan atribut class atau id.
+      </p>
+    </div>
+  </body>
+</html>
+
+
+
+Span
+Kedua, elemen <span>, elemen ini memberikan manfaat yang sama seperti <div>, bedanya elemen ini digunakan sebagai 
+phrase elements dan tidak terdapat line breaks ketika menggunakannya. Sederhananya, <span> merupakan sebuah 
+<div> yang digunakan dalam sebuah baris teks yang dapat diwadahi oleh paragraf, list, heading, atau lainnya.
+
+  <ul>
+    <li>Agil: <span class="phone">08123xxx</span></li>
+    <li>Widy: <span class="phone">08222xxx</span></li>
+    <li>Gilang: <span class="phone">08333xxx</span></li>
+  </ul>
+
+  <p>
+    Untuk membuat sebuah bakso kita membutuhkan <span class="bahan">daging sapi</span>,
+    <span class="bahan">tepung tapioka</span>, <span class="bahan">bawang merah</span> dan
+    <span class="bahan">bawang putih</span> kemudian satu sendok makan
+    <span class="bahan">gula</span> dan <span class="bahan">garam</span>.
+  </p>
+
+
+Struktur Dasar Tabel
+Tabel pada HTML disusun dari tiga buah elemen, yaitu <table>, <tr> dan <td> atau <th>. Elemen <table> digunakan 
+untuk menandakan dimulainya dan diakhirinya sebuah konten tabel dan juga sebagai wadah untuk tabel itu sendiri. 
+Kemudian elemen <tr> digunakan untuk membuat sebuah baris baru yang di dalamnya terdapat 
+elemen <td> atau <th> sehingga menghasilkan sebuah sel. 
+  
+Elemen <td> berarti “table data”. Selain membuat sel, elemen ini juga merupakan tempat menampung data pada tabel, 
+dan elemen <th> atau “table header” digunakan untuk menentukan sebuah header pada kolom datanya. 
+Untuk lebih jelasnya, perhatikan ilustrasi berikut.
+
+<h1>Pemenang Piala Dunia Tiga Tahun Terakhir</h1>
+
+<table>
+  <tr>
+    <th>Tahun</th>
+    <th>Juara 1</th>
+    <th>Juara 2</th>
+    <th>Juara 3</th>
+  </tr>
+  <tr>
+    <td>2018</td>
+    <td>Prancis</td>
+    <td>Kroasia</td>
+    <td>Belgium</td>
+  </tr>
+  <tr>
+    <td>2014</td>
+    <td>Jerman</td>
+    <td>Argentina</td>
+    <td>Belanda</td>
+  </tr>
+  <tr>
+    <td>2010</td>
+    <td>Spanyol</td>
+    <td>Belanda</td>
+    <td>Jerman</td>
+  </tr>
+</table>
+Hal yang perlu kita ingat lagi, seluruh konten atau data dituliskan pada elemen <td> ataupun <th>. 
+Kita bisa memberikan konten apa saja di dalamnya, seperti teks, gambar, atau bahkan sebuah tabel lainnya.
+
+
+Column Spans
+Untuk merentangkan sebuah kolom (column spanning) kita bisa menggunakan atribut colspan pada elemen <td> atau <th>. 
+Berikut adalah contoh untuk penggunaan colspan sehingga sebuah header mencakup dua kolom.
+
+<table>
+  <tr>
+    <th>18:00</th>
+    <th>19:00</th>
+    <th>20:00</th>
+  </tr>
+  <tr>
+    <td colspan="2">Avenger Infinity Wars</td>
+    <td>It Chapter 2</td>
+  </tr>
+  <tr>
+    <td>One Piece: Stampede</td>
+    <td>Weathering With You</td>
+    <td>Gundala</td>
+  </tr>
+  <tr>
+    <td>Gundala</td>
+    <td colspan="2">Avenger Infinity Wars</td>
+  </tr>
+</table>
+
+
+Row Spans
+Untuk merentangkan sebuah baris (row spanning) kita dapat menggunakan atribut rowspan. 
+Mirip seperti column spanning, tetapi atribut ini akan merentangkan sebuah sel ke bawah. Berikut contohnya.
+
+<table border="1">
+  <tr>
+    <th rowspan="3">18:00</th>
+    <td>Avenger Infinity Wars</td>
+  </tr>
+  <tr>
+    <td>One Piece: Stampede</td>
+  </tr>
+  <tr>
+    <td>Gundala</td>
+  </tr>
+</table>
+
+Elemen dan Atribut                               Deskripsi
+
+table                                    Menetapkan elemen tabel.
+
+td                                   Menetapkan sebuah sel dalam baris tabel.
+
+colspan=”number”                     Jumlah kolom yang dicakup oleh sel.
+
+rowspan=”number”                     Jumlah baris yang dicakup oleh sel.
+
+headers=”nama header”              Mengasosiasikan data sel dengan header.
+
+th                            Menetapkan header yang terkait dengan baris atau kolom.
+
+colspan=”number”                          Jumlah kolom dicakup oleh header.
+
+rowspan=”number”                     Jumlah row yang dicakup oleh header.
+
+headers=”nama header”                Mengasosiasikan header dengan header lain.
+
+scope=”row|col|rowgroup|colgroup”   Mengasosiasikan header dengan baris, kelompok baris, 
+                                      kolom, atau kelompok kolom.
+
+tr                                      Menetapkan sebuah baris pada tabel.
+
+caption                                Memberikan judul pada sebuah tabel.
+
+col                                       Menetapkan sebuah kolom.
+
+colgroup                                 Menetapkan sebuah kelompok kolom.
+
+tbody                              Mengidentifikasi sebuah body dalam tabel.
+
+tfoot                               Mengidentifikasi sebuah footer dalam tabel.
+
+thead                               Mengidentifikasi sebuah header dalam tabel.
+
+
+Input Element
+Elemen <input> merupakan elemen yang sangat sering dipakai untuk mendapatkan data dari user. 
+Mengapa hal tersebut terjadi? Hal ini karena elemen input memiliki banyak sekali tipe-tipenya, 
+mulai dari teks, password, email, search, file, dsb. Tidak hanya itu, dari sekian tipe input, 
+masing-masingnya juga didukung oleh atribut khusus sehingga pembuatan formulir semakin powerful.
+
+<div>
+  Text:
+  <input type="text" />
+</div>
+<div>
+  Number:
+  <input type="number" />
+</div>
+<div>
+  Email:
+  <input type="email" />
+</div>
+<div>
+  Password:
+  <input type="password" />
+</div>
+
+Tipe                                                               Deskripsi
+
+<input type="text">                      Input teks yang berisi satu baris. Ini adalah tipe default dari 
+                                         input elemen. Jika tidak menentukan tipenya, tipe text-lah yang 
+                                         akan diterapkan.
+
+<input type="number">                    Input teks yang hanya mengizinkan format angka. 
+
+<input type="password">                  Sama seperti input text, tetapi setiap karakter akan ditampilkan 
+                                         sebagai bintang.
+
+<input type="email">                     Sama seperti teks biasa, tetapi input ini dikhususkan untuk format 
+                                         email. Jika tidak, error akan muncul.
+
+<input type="search">                    Input untuk melakukan pencarian berdasarkan kata kunci. 
+                                         Input ini memiliki ikon ✕ di tepi kanan elemen untuk melakukan clear text.
+
+<input type="date">                      Untuk mengambil data tanggal. Tipe ini akan menyediakan popup penanggalan 
+                                         untuk mempermudah pengisian. 
+
+<input type="time">                      Menentukan waktu (jam) yang ingin user isi. Tipe input ini juga akan 
+                                         menampilkan visual dari jam.
+
+<input type="datetime-local">            Sama seperti tipe date, tetapi ia menambahkan data waktu (jam).
+
+<input type="checkbox">                  Di-render sebagai sebuah kotak yang dapat dicek untuk active.
+
+<input type="radio">                     Pada umumnya, ini digunakan untuk melakukan pemilihan dari sekian opsi 
+                                        (radio button) yang ada. Untuk melakukannya, input ini akan dikelompokkan 
+                                         dalam sebuah radio group. Bukan merupakan suatu elemen, kita dapat 
+                                         memberikan value yang sama pada atribut name di setiap elemen radio.
+
+<input type="range">                    Menentukan nilai angka berdasarkan jangkauan nilai yang ditentukan. 
+                                        User tidak akan bisa mengambil nilai diluar yang ditentukan. 
+
+<input type="color">                    User dapat menentukan warna dengan tipe ini, baik menggunakan color 
+                                        picker atau memasukkan format nilai warna secara manual.
+
+<input type="file">                     Melakukan input satu atau lebih berkas dari penyimpanan data perangkatnya.
+
+<input type="submit">                   Input yang di-render sebagai tombol submit. Jika tombol ini ditekan, 
+                                        formulir akan ter-submit dan dikirimkan ke tujuan pengiriman (atribut action).
+
+<input type="hidden">                   Biasanya, tipe ini tidak terlihat oleh user. Namun, input ini akan sangat 
+                                        berguna bagi developer untuk memasukkan suatu data.
+
+
+
+
+Nah, HTML memiliki elemen khusus yang memungkinkan user menuliskan teks dalam banyak baris. 
+Mari kita berkenalan dengan <textarea>. Elemen <textarea> ini berbeda dengan elemen input sebelumnya. 
+Selain nama elemen yang menjadi pembeda, elemen textarea memiliki tag penutup agar dapat berfungsi dengan baik.
+
+<textarea rows="6" cols="16">
+  Belajar
+  Dasar
+  Pemrograman
+  Web
+  </textarea>
+  Jika diperhatikan, Anda akan melihat dua atribut pada elemen textarea, yaitu rows dan cols. 
+  Kedua atribut ini akan menentukan ukuran dari elemennya  
+
+
+  Label Element
+Ada dua langkah untuk menghubungkan elemen label dan input. Pertama, menambahkan atribut id pada elemen input 
+beserta value-nya. Kedua, menambahkan atribut for pada elemen label dan value-nya. Apakah sudah selesai sampai sini? 
+Jawabannya, belum. Kita perlu memberikan value yang sama pada kedua atribut (id dan for). Dengan cara ini, 
+elemen label akan berasosiasi dengan elemen input dan kita akan mendapatkan dua keuntungan yang telah dibahas sebelumnya.
+
+<div>
+  <label for="email">Email</label>
+  <br>
+  <input type="email" id="email" />
+</div>
+
+<div>
+  <label for="password">Password</label>
+  <br>
+  <input type="password" id="password" />
+</div>
+
+
+Atribut                                 Tipe                                           Deskripsi
+
+name                                semua tipe                Menamai elemen input. Data yang diisikan oleh user 
+                                                              akan dikirimkan saat formulir di-submit. 
+                                                              Atribut ini memiliki peran yang sangat penting. 
+                                                              Jika tidak menyertakannya, data input tidak akan dikirim ke server.
+
+placeholder                text, search, url, tel, email,     Teks “samar” yang muncul pada kolom input. 
+                           password, number                   Teks ini biasanya digunakan sebagai petunjuk atau contoh 
+                                                              data yang perlu diisi.
+                                          
+
+required                semua tipe, kecuali hidden,           Atribut ini menyebabkan elemen input wajib diisi 
+                         range, color, dan button             untuk di-submit. Ia merupakan atribut boolean.
+                        
+
+value                    semua tipe, kecuali image            Memberikan data awal atau default pada elemen input.
+
+autocomplete        semua tipe, kecuali checkbox,             Fitur melengkapi input secara otomatis. Biasanya,
+                    radio, dan button                         ini terjadi ketika kita pernah meng-input sesuatu 
+                                                              dan pada kesempatan berikutnya, data tersebut 
+                                                              akan ditampilkan lagi oleh browser sebagai autocomplete.
+
+maxlength         text, search, url, tel,                   Menentukan maksimal panjang karakter yang diperbolehkan pada kolom input.
+                  email, password
+
+max                date, month, week, time,                   Menentukan maksimal nilai yang diperbolehkan.
+                  datetime-local, number, range
+
+minlength        text, search, url, tel, email, password     Menentukan minimal panjang karakter yang diperbolehkan pada kolom input.
+
+min              date, month, week, time,                    Menentukan minimal nilai yang diperbolehkan.
+                 datetime-local, number, range
+
+checked           checkbox, radio                            Mengaktifkan atau mencentangkan input checkbox.
+
+accept              file                                      Panduan atau batasan format berkas apa yang diperbolehkan pada input berkas.
+
+multiple                email, file                          Memungkinkan pemilihan ganda pada elemen input.
+
+pattern       text, search, url, tel, email, password        Menentukan pola yang wajib dipatuhi pada data yang diisi agar dapat valid.
+
+readonly      semua tipe, kecuali hidden, range,            Tidak memiliki akses edit nilai.
+              color, checkbox, radio, dan button
+
+disabled              semua tipe                             Memberikan efek tidak aktif pada elemen input.
+
+
+
+
+Atribut Name di Elemen Input
+Dalam mengirimkan data ke server, kita wajib menerapkan atribut name pada seluruh kolom input dalam formulir. 
+Contohnya, Anda ingin membuat formulir untuk melakukan pemesanan kamar hotel. Anda harus memberi atribut name 
+pada seluruh elemen input.
+
+<input id="fullName" name="fullName" required />
+  </div>
+ 
+  <div>
+    <label for="checkIn">Tanggal Check-In</label>
+    <input type="date" id="checkIn" name="checkIn" required />
+  </div>
+ 
+  <div>
+    <label for="checkOut">Tanggal Check-Out</label>
+    <input type="date" id="checkOut" name="checkOut" required />
+  </div>
+ 
+  <button type="submit">Submit</button>
+</form>
+Mengapa hal ini diperlukan? Seharusnya, setiap data dikirimkan dalam bentuk pasangan key dan value. 
+Key merupakan identitas atau nama dari data yang dikirimkan, sedangkan value adalah data yang diisi oleh user. 
+Hal ini akan memberikan kemampuan pada server untuk mengambil data berdasarkan key-nya. Lebih jelasnya, 
+kita akan melihat penjelasan pada Cara Membawa Data Formulir
+
+
+
+Cara Membawa Data Formulir
+Elemen form memiliki atribut-atribut khusus yang menentukan konfigurasi request untuk dikirimkan ketika user 
+menekan tombol submit. Ada dua atribut: action dan method.
+
+Atribut Action
+Atribut action akan menentukan alamat tujuan dari pengiriman data. Kita bisa memberikannya URL yang mengarah 
+pada suatu server atau kadang disebut sebagai API. Server yang dimaksud dapat server yang berada pada domain 
+yang sama atau berbeda. Dalam hal ini, kita bisa memberikan URL yang relatif atau absolut.
+
+Absolute URL
+<form action="https://example.com/jalur/ke/alamat/destinasi">
+  <!-- Berbagai macam kolom input -->
+</form>
+
+Relative URL
+<form action="/jalur/ke/alamat/destinasi">
+  <!-- Berbagai macam kolom input -->
+</form>
+
+Bagaimana jika kita tidak menyertakan atau menentukan atribut ini pada elemen form? Jika sampai demikian, 
+data-data formulir akan dikirimkan ke alamat yang saat ini sedang diakses.
+
+
+
+Atribut Method
+Atribut ini akan menentukan cara data dikirimkan ke server. Tidak hanya alamat yang kita butuhkan, 
+ada beberapa cara atau proses dalam mengirimkan data ke server. Semua ini dilakukan dengan menentukan 
+metode pengiriman.
+
+Ada dua buah metode yang bisa digunakan untuk mengirimkan data pada formulir HTML, yaitu GET dan POST.
+
+Metode GET
+Biasanya, metode ini digunakan untuk mendapatkan data dari server. Data tersebut akan diterima oleh browser 
+melalui body response (HTTP response). Tidak hanya itu, HTTP request juga memiliki body request untuk mengirimkan 
+data dari browser ke server. Namun, body request dengan metode GET akan kosong. Hal ini karena setiap data yang 
+dikirimkan akan diletakkan dalam URL parameters.
+
+Perhatikan contoh kode di atas pada formulir login user. Bayangkan, kita membuat formulir dengan 
+metode GET seperti berikut.
+
+<form method="GET" action="https://example.com/">
+  <!-- Kolom input login disembunyikan -->
+</form>
+Jika setiap input telah diisi dan user menekan tombol submit, setiap data akan diletakkan dalam URL parameter. 
+Data akan diletakkan dalam pasangan key dan value. Key adalah atribut nama pada elemen input, 
+sedangkan value adalah nilai yang diisi oleh user. Berikut adalah tampak URL dari request yang akan diperoleh.
+
+https://example.com/?email=EMAIL_USER&password=PASSWORD_USER
+Sebab ada beberapa kolom input yang tersedia, setiap pasangan key dan value akan dipisahkan dengan karakter 
+ampersand (&).
+
+Catatan:
+value pada URL di atas merupakan data placeholder saja (tidak asli). Data yang akan dikirimkan ke server m
+erupakan data asli yang diisikan oleh user dalam kolom input. Pastikan Anda memiliki atribut name pada 
+setiap input agar dapat dibawa dalam request.
+
+
+
+Metode POST
+Metode lain yang bisa digunakan adalah metode POST. Ini merupakan metode untuk mengirimkan data dari browser 
+ke server. Umumnya, metode ini meminta server menanggapi terhadap data yang telah dikirimkan oleh browser 
+dan mengharapkan pengembalian dari hasil tanggapan tersebut (response).
+
+Silakan perhatikan kembali formulir login sebelumnya. Jika metode GET tidak memiliki body request dan 
+menyebabkan data-data diletakkan dalam URL parameters, metode POST akan berperilaku sebaliknya. Maksudnya, 
+setiap data tidak akan berada pada URL, tetapi mereka akan diletakkan dalam body request.
+
+<form method="POST" action="https://example.com/">
+  <!-- Kolom input login disembunyikan -->
+</form>
+
+
+
+
+Special Character
+Ada beberapa karakter spesial seperti copyright symbol (©) yang tidak termasuk ke dalam standar kelompok 
+ASCII characters. ASCII characters hanya menyediakan karakter seperti huruf, nomor, dan beberapa simbol dasar 
+lainnya. Karakter lain, seperti lebih besar dari (>) atau lebih kecil dari (<), tidak dapat digunakan secara 
+langsung sebagai konten pada HTML meskipun tersedia dalam ASCII character. Hal ini karena karakter tersebut 
+akan terbaca sebagai sebuah tag.
+
+Untuk menampilkan karakter seperti yang disebutkan tadi, HTML memerlukan sebuah “escaped” character. 
+Escaping artinya tidak menulis karakter itu sendiri, tetapi ia diganti dengan nilai numeric atau character 
+reference pada karakternya.
+
+Ada dua cara untuk melakukannya, yakni menetapkan nilai numerik (numeric entity) atau menggunakan nama singkatan 
+yang sudah ditetapkan untuk masing-masing karakternya (named entity). Semua referensi karakter dimulai 
+dengan “&” dan diakhiri dengan “;”.
+
+Contohnya, untuk menggunakan simbol copyright, kita dapat menggunakan “&copy;”.
+
+<p>Belajar Dasar Pemrograman Web &copy; 2023, Dicoding</p>
+Selain itu, kamu juga bisa gunakan “&#169;”.
+
+<p>Belajar Dasar Pemrograman Web &#169; 2023, Dicoding</p>
+
+
+Karakter              Deskripsi             Named Entity             Numeric Entity
+
+              non-breaking space            &nbsp;                   &#160;      
+
+&                   Ampersand                &amp;                   &#038;
+
+’                Apostrophe                  &apos;                  &#039;
+
+<           Kurang dari (less-than)           &lt;                   &#060;
+
+>          Lebih dari (greater-than)         &gt;                    &#062;
+
+©            Hak cipta (copyright)           &copy;                  &#169;
+
+®           Merek dagang terdaftar           &reg;                   &#174;            
+           (registered trademark)
+
+™          Merek dagang (trademark)         &trade;                  &#8482;
+
+£                  Pound                    &pound;                   &#163;
+
+¥                    Yen                    &yen;                     &#165;
+
+€                  Euro                     &euro;                    &#8364;
+
+–                 En-dash                  &ndash;                    &#8211;
+
+—                  Em-dash                 &mdash;                   &#8212;
+
+‘           Kutip tunggal kiri               &lsquo;                &#8216;
+
+’         Kutip tunggal kanan              &rsquo;                   &#8217;
+
+“           Kutip ganda kiri              &ldquo;                     &#8220;
+
+”           Kutip ganda kanan               &rdquo;                  &#8221;
+
+•                Bullet                   &bull;                    &#8226;
+
+...        Horizontal ellipsis            &hellip;                  &#8230;
+
+
+

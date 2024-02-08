@@ -1,0 +1,112 @@
+/* Konfigurasi Meta Tag Viewport untuk Responsibilitas Layout
+Setelah berhasil membuat layout menggunakan float, apakah terpikirkan bagaimana tampilan yang dihasilkan pada 
+mobile device? Tampilan website kita terlihat baik ketika dibuka menggunakan laptop atau desktop, tetapi belum 
+tentu akan sama pada mobile device.
+
+Pada browser Google Chrome dan Mozilla Firefox, ada fitur inspeksi elemen. Fitur ini sangat banyak dan bermanfaat 
+bagi developer web dalam membantu mengembangkan website. Hal yang pasti, pada inspector tersebut, ada fitur yang 
+dapat mensimulasikan halaman website dalam tampilan yang lebih kecil, seperti perangkat mobile atau tablet. 
+Untuk membuka fitur inspector, kita dapat gunakan keyboard shortcut, seperti “CTRL + SHIFT + I” atau klik kanan 
+dan pilih “Inspect”/”Inspect Page”. 
+
+
+
+
+Untuk mengatasi masalah di atas, kita perlu menetapkan meta tag viewport untuk mengendalikan dan menentukan 
+bentuk dari viewport browser, terutama pada perangkat mobile. Jadi, kita dapat melihat ukuran halaman web layaknya 
+diakses pada desktop device. Namun, hal tersebut tetap memerlukan penggunaan teknik peningkatkan responsibilitas 
+karena ukuran viewport-nya yang berbeda–kita akan mempelajari ini pada materi berikutnya.
+
+Mengatur viewport dapat dilakukan melalui tag <meta> yang disisipkan dalam elemen <head>. Contohnya berikut.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">*/
+
+
+
+/* Specific Style dengan Media Query
+Walaupun sudah menetapkan meta tag, viewport tampilan pada mobile device belum baik. Hal ini karena informasi yang 
+ditampilkan pada elemen <article> terlalu sempit, malahan informasi dalam elemen <aside> sulit terbaca. 
+
+Untuk mengatasi masalah di atas, CSS menyediakan sebuah fitur untuk menentukan styling hanya pada kondisi browser dan device tertentu yang sesuai dengan aturan yang kita tetapkan. Contohnya, kita memerintahkan ke CSS bahwa “tolong terapkan kode styling ini jika ukuran viewport lebih lebar dari 480 piksel”. Fitur tersebut dinamakan CSS Media Query.
+
+Berikut adalah aturan penulisan media query.
+ */
+ @media media-type and (media-feature-rule) {
+    /* CSS rules apa pun ada di sini */
+  }
+
+  /* 
+  tulis Media Query di paling bawah css
+
+  Pada aturan di atas, kita dapat jabarkan sebagai berikut.
+
+-Media-type: jenis media sebagai acuan bagi browser dalam menerapkan kode styling. Tipe yang dapat diberikan 
+adalah print, screen, atau semuanya.
+
+-Media-feature-rule: aturan atau kondisi yang harus terpenuhi agar kode styling dapat diterapkan. Kondisi yang 
+dimaksud seperti ukuran viewport, orientasi layar, dan jenis penggunaan perangkat tunjuk 
+(touchsceen, keyboard navigation, atau mouse).
+
+-Media-block: sekumpulan CSS rule yang akan diterapkan jika kedua poin sebelumnya terpenuhi. */
+
+body {
+    font-family: sans-serif;
+  }
+  
+  main {
+    display: flex;
+  
+    flex-direction: column;
+  }
+  
+  main aside {
+    order: -1;
+  }
+
+/* CSS rule dalam block @media di bawah akan diterapkan jika ukuran viewport di atas 600px */
+@media screen and (min-width: 400px) {
+    h1 {
+      color: red;
+    }
+  
+    h2 {
+      color: green;
+    }
+  }
+
+  /* CSS rule dalam block @media di bawah akan diterapkan jika ukuran viewport di atas 992px */
+@media screen and (min-width: 600px) {
+    main {
+      flex-direction: row;
+    }
+  
+    #mainContent {
+      flex-basis: 70%;
+    }
+  
+    main aside {
+      flex-basis: 30%;
+  
+      order: 1;
+    }
+
+  h1 {
+    color: initial;
+  }
+
+  h2 {
+    color: initial;
+  }
+
+  h3 {
+    color: green;
+  }
+}
+
+/* Pada hasil di atas, kita memindahkan elemen <aside> berada di atas elemen <div id="mainContent"> 
+saat ukuran viewport di bawah 992px. Jika tidak, kedua elemen tersebut akan dijajarkan secara horizontal. 
+Selain itu, ada styling lainnya yang berubah. Silakan perhatikan dengan saksama pada hasil yang ditampilkan. */
+
+
+
+/* semua element bisa lihat lebih jelas dan lengkap , di website MDN Mozhila dan W3School */

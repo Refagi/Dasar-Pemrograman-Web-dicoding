@@ -1,0 +1,249 @@
+/* Positioning
+
+-Normal Flow/Static Flow
+Ia adalah default behaviour yang dimiliki elemen, yakni setiap elemen block akan ditampilkan dalam baris baru 
+ketika dibuat. Jadi, setiap elemen block selalu muncul di bawah dari elemen block sebelumnya. Bahkan, 
+jika masih terdapat ruang kosong pada samping elemennya, mereka tidak akan tampak bersebelahan.
+
+-Relative Positioning
+Membuat elemen dapat melakukan perpindahan posisi ke atas, kanan, bawah, ataupun kiri dari posisi semula atau 
+posisi seharusnya elemen tersebut berada. Perpindahan posisi ini tidak akan berpengaruh terhadap posisi elemen di 
+sekitarnya karena ketika menggunakan relative positioning elemen tersebut akan dipindahkan dari normal flow.
+
+-Absolute Positioning
+Sama seperti relative, elemen akan dipindahkan keluar dari normal flow sehingga kita dapat memindahkan posisi 
+elemen ke atas, kanan, bawah, ataupun kiri secara leluasa tanpa mengganggu elemen di sekitarnya. Namun, posisinya 
+relatif terhadap jendela browser dan posisinya dapat relatif pada induk elemen selama induk elemen juga berada 
+di luar dari normal flow.
+
+-Fixed Positioning
+Ia merupakan absolute position. Namun, posisinya selalu relatif pada jendela browser, bahkan ketika pengguna 
+melakukan scrolling posisinya akan tetap tampak pada posisinya di layar.*/
+
+
+/* Positioning: Perbedaan Static Flow dan Non-Static Flow */
+.second {
+    background-color: #6495ed;
+    position: relative;
+  }
+
+  /* Positioning: Normal Flow
+Dalam flow normal, setiap elemen block ditempatkan di bawah elemen sebelumnya. Sebab ini merupakan cara standar 
+browser memperlakukan elemen HTML, kita tidak perlu menetapkan nilai properti position ketika ingin membuat 
+perilaku seperti ini. Namun, secara sintaks perilaku ini ditetapkan dengan nilai static. */
+h1 {
+    background-color: #aaaaaa;
+    padding: 30px;
+  }
+  
+  p {
+    width: 450px;
+  }
+
+  /* Pada contoh di atas, kita tidak menetapkan nilai lebar pada elemen heading, tetapi kita dapat lihat bahwa 
+  elemen heading tersebut mencakup seluruh lebar ruang yang ada pada jendela browser. 
+
+Elemen paragraf kita atur lebarnya dengan nilai 450px sehingga elemen tersebut tidak mencakup seluruh lebar ruang 
+yang ada. Walaupun demikian, elemen paragraf selanjutnya tetap ditampilkan di bawahnya meskipun masih terdapat 
+ruang yang cukup di sampingnya. */
+
+
+/* Positioning: Relative Positioning
+
+Sebagaimana yang kita ketahui sebelumnya, dengan menetapkan relative pada properti position, kita dapat melakukan 
+perpindahan posisi elemen ke atas, kanan, bawah, ataupun kiri. Perpindahan posisi yang dilakukan tidak akan 
+berpengaruh terhadap posisi elemen di sekitarnya. Hal ini karena ketika menggunakan relative positioning elemen 
+tersebut akan dipindahkan dari normal flow. Untuk menggunakan relative positioning, kita tetapkan nilai relative 
+pada properti position. */
+
+h1 {
+    background-color: #aaaaaa;
+    padding: 30px;
+  }
+  
+  p {
+    width: 450px;
+  }
+  
+  .relative {
+    position: relative;
+    top: 10px;
+    left: 100px;
+  }
+
+
+  /* Positioning: Absolute Positioning
+Ketika properti position diberikan nilai absolute, ia akan berperilaku sama dengan relative. Elemen akan 
+dikeluarkan dari normal flow sehingga jika dipindahkan posisinya tidak akan berpengaruh pada elemen lain 
+di sekitarnya. 
+
+Namun, hal yang membedakannya adalah elemen ini benar-benar tidak dianggap ada oleh elemen yang berada pada 
+normal flow. Dampaknya, lokasi awal elemen yang diberikan nilai absolute akan ditempati oleh elemen di bawahnya. */
+
+h1 {
+    width: 250px;
+  }
+  
+  p {
+    width: 450px;
+  }
+  
+  .absolute {
+    position: absolute;
+    top: 0;
+    left: 500px;
+  }
+
+/* Pada contoh di atas, kita bisa lihat bahwa ketika elemen heading menerapkan properti position dengan nilai 
+absolute, elemen di bawahnya (paragraf) akan menempati posisi yang sebelumnya ditempati oleh elemen heading tersebut. 
+Selain itu, perpindahan posisi ketika menggunakan absolute akan relatif pada jendela browser. */
+
+
+/* Positioning: Fixed Positioning
+Fixed positioning merupakan absolute position. Namun, posisinya selalu relatif pada jendela browser 
+(meskipun diletakkan dalam induk elemen di luar flow normal). Bahkan, ketika pengguna melakukan scrolling, 
+posisinya akan tetap tampak pada posisinya di layar. */
+
+h3 {
+    padding: 10px;
+    background-color: #aaaaaa;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+
+  /* Floating
+Secara sederhananya, properti float dapat membuat elemen berada pada sebelah kanan atau kiri. Bahkan, 
+jika diterapkan pada elemen inline memungkinkan elemen di sekitarnya mengelilingi elemen tersebut (wrap). */
+
+* {
+    /* digunakan untuk menghapus seluruh padding dan margin standar yang diberikan browser pada elemen */
+    margin: 0;
+    padding: 0;
+  
+    /* Menggunakan border-box dalam perhitungan dimensi box-nya */
+    box-sizing: border-box;
+  }
+  
+  .container {
+    width: 800px;
+    height: 400px;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
+
+  .left-content {
+    text-align: center;
+    line-height: 400px;
+    width: 30%;
+    height: 100%;
+    background-color: #00c7ed;
+  
+    /* digunakan untuk memindahkan posisi elemen ke sisi kiri container */
+    float: left;
+  }
+  
+  .right-content {
+    text-align: center;
+    line-height: 400px;
+    width: 70%;
+    height: 100%;
+    background-color: #60d0a8;
+  
+    /* digunakan untuk memindahkan posisi elemen ke sisi kanan container */
+    float: right;
+  }
+
+  /* Dari contoh di atas, kita bisa melihat pada selector .left-content dan .right-content ditetapkan properti 
+  float dengan nilai left dan right sehingga elemen tersebut dapat diposisikan secara bersebelahan. 
+
+Ketika menggunakan properti float, jangan lupa untuk menentukan ukuran lebar dari propertinya karena nilai dari 
+lebar menentukan seberapa banyak ruang yang dicakup oleh elemen. Pada contoh di atas, kita menetapkan nilai 30% 
+untuk konten kiri dan 70% untuk konten sebelah kanan */
+
+
+/* Permasalahan Penerapan Float
+
+Masalah yang akan ditimbulkan adalah jika sebuah elemen induk yang hanya memiliki satu elemen dengan menerapkan 
+properti float akan memiliki nilai tinggi 0px. Contohnya berikut.
+*/
+.container {
+    width: 800px;
+    padding: 8px;
+    border: 4px solid black;
+  }
+  
+  img {
+    float: left;
+    margin: 10px;
+  }
+
+  /* Pada contoh tersebut, kita bisa melihat bahwa elemen gambar berada dalam sebuah container div. Namun, 
+  container tersebut tidak memiliki tinggi senilai gambar yang ditampilkan. Mengapa bisa demikian? Untuk lebih 
+  jelasnya, kita coba tambahkan paragraf di dalam container tersebut tanpa menggunakan properti float 
+  
+  
+  Hal ini menunjukkan bahwa elemen yang menerapkan float “tidak dianggap ada” oleh induk elemen yang menaunginya 
+  karena dengan menggunakannya float elemen akan dikeluarkan dari normal flow.*/
+
+  
+  /* Clear Property
+Cara yang pertama adalah dengan menggunakan properti clear. Properti clear memang dibuat untuk menghilangkan sifat 
+float. Dengan demikian, elemen yang menerapkan properti float akan kembali “dianggap ada”. Namun, untuk menerapkan 
+properti ini kita perlu membuat sebuah elemen kosong (biasanya menggunakan div tanpa konten) yang menerapkan 
+properti clear.
+
+Nilai dari properti clear merupakan nilai yang digunakan pada properti float. Sebab, properti clear akan menghapus 
+sifat float sesuai dengan nilai yang ditetapkan. Contohnya berikut. */
+
+.container {
+    width: 800px;
+    border: 4px solid black;
+  }
+  
+  img {
+    float: left;
+    margin: 10px;
+  }
+  
+  .clear {
+    clear: left;
+  }
+
+
+  /* Teknik Overflow
+Cara kedua adalah dengan menetapkan properti overflow: auto pada elemen yang menampung elemen float. 
+Sebagian developer lebih memilih menggunakan cara ini karena lebih praktis dan tidak perlu membuat elemen baru 
+ketika menggunakannya.
+
+Untuk menerapkannya sangatlah simpel, hanya tambahkan properti overflow dengan nilai auto pada container. */
+
+.container {
+    width: 800px;
+    border: 4px solid black;
+    overflow: auto;
+  }
+  
+  img {
+    float: left;
+    margin: 10px;
+  }
+  
+
+
+  /*  Sticky Position pada Navigation List 
+  
+  Ada satu fitur yang mungkin perlu diterapkan lagi pada halaman profil yang kita buat. Pada halaman profil, 
+  ada daftar navigasi untuk mengarahkan user pada informasi yang dipilih secara langsung. Namun, navigasi 
+  tersebut agak repot diakses ketika pengguna berada di bagian bawah halaman setelah melakukan scrolling. 
+  Hal ini karena navigasi tersebut selalu berada pada tempatnya atau tidak berpindah (di bawah jumbotron website). 
+  User perlu scroll/kembali ke atas untuk meraihnya.*/
+
+
+  /* semua element bisa lihat lebih jelas dan lengkap , di website MDN Mozhila dan W3School */

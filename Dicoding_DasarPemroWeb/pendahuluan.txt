@@ -1,0 +1,100 @@
+-Cara Internet Bekerja
+Internet memberikan kemampuan pada user untuk mengirimkan permintaan dan menerima hasil permintaan (data) pada 
+website. Hal ini terjadi karena komputer milik user terhubung dengan komputer lain yang biasa disebut dengan server. 
+Kedua komputer ini berkomunikasi melalui sebuah jaringan, baik dengan kabel maupun nirkabel.
+
+Berikut adalah perkembangan jaringan yang terjadi.
+
+-Dua buah komputer saling terhubung untuk berkomunikasi, baik menggunakan kabel atau nirkabel.
+
+-Banyak komputer terhubung dengan banyak komputer juga.
+
+-Jaringan ini sudah terbentuk dengan memanfaatkan network switch agar dapat terkoneksi dengan mudah dan efisien. 
+Bahkan, satu jaringan dengan network switch dapat terhubung dengan network switch lain sehingga memperbesar 
+koneksi komputer.
+
+-Suatu jaringan dapat terhubung dengan jaringan lainnya meskipun berbeda kontinen. 
+Ia menggunakan Internet Service Provider (ISP) agar saling terhubung dengan router ISP lainnya.
+
+
+
+-Website dan Halaman Web
+
+halaman web :
+Halaman web merupakan halaman tunggal yang menampilkan informasi, baik berupa teks, gambar, maupun media lainnya. 
+Tidak hanya media yang ditampilkan, halaman web yang dibangun dapat ditambahkan interaktivitas menggunakan kode 
+(JavaScript).
+
+Website :
+Jika sebelumnya Anda belajar halaman web berupa halaman tunggal, website adalah sekumpulan halaman web 
+yang saling terhubung. Website bersifat unik karena setiap halaman dapat saling terhubung dengan 
+menggunakan hipertaut (hyperlink), baik dalam domain yang sama maupun berbeda.
+
+
+-Web Server
+
+Siklus Request dan Response:
+Tahukah Anda bahwa browser dapat menampilkan website dengan baik karena mendapatkan data dari komputer lain 
+yang biasa disebut dengan server? Bagi komputer yang mengakses website, kita disebut sebagai client,
+atau dalam hal ini adalah browser yang melakukan permintaan data.
+
+Browser akan mengirimkan sesuatu bernama request pada server dan menerima data dalam sesuatu bernama response 
+sebagai hasil tanggapan dari server. Data-data tersebut dapat berupa berkas HTML, CSS, JavaScript, 
+dan aset-aset lain yang dibutuhkan untuk menampilkan website.
+
+
+-Peranan Web Server
+
+Berbicara mengenai web server, ia dapat terbagi menjadi dua hal, yaitu hardware dan software. 
+Bukan berarti kedua hal tersebut bekerja secara terpisah, tetapi saling melengkapi dan bekerja sama.
+
+Dari sisi hardware, web server merupakan komputer dengan spesifikasi yang disesuaikan berdasarkan layanannya. 
+Contohnya, kapasitas hard drive yang besar akan dibutuhkan jika Anda memiliki website yang menyimpan banyak gambar.
+
+Dari sisi software, web server merupakan komputer yang menjalankan sebuah program agar dapat melayani 
+(menerima atau mengirim) data melalui jenis protokol bernama HTTP. Ini merupakan protokol standar dalam 
+melakukan transaksi data oleh browser.
+
+
+
+
+-DNS Server
+Sebenarnya, nama domain tidak akan menggantikan peran dari IP address. Komputer tetap menggunakan alamat IP 
+untuk mengakses website. Namun, bagaimana caranya nama domain dapat diterjemahkan menjadi alamat IP? Berikut 
+jawabannya.
+
+Ketika user membuka website Dicoding menggunakan domain dicoding.com, browser akan menanyakan pada komputer, 
+apakah ia mengenali dan dapat memberikan IP address-nya berdasarkan nama domain tersebut? Dia akan memeriksa 
+berdasarkan DNS cache yang ada. Jika ada, browser akan diberikan alamat IP-nya dan menampilkan website yang diminta.
+
+Jika komputer tidak mengenali nama domain tersebut, dia akan menanyakan pada DNS server yang secara singkat 
+bertugas untuk memberi tahu alamat IP yang sesuai dari nama domain yang terdaftar padanya. Jika sudah, 
+browser akan diberikan alamat IP-nya dan meneruskan permintaan konten halaman web ke web server.
+
+
+
+
+-Web Browser
+Web browser atau disingkat browser merupakan sebuah program yang menampilkan halaman web. 
+Tidak hanya satu halaman web, tetapi banyak website yang aktif di dunia ini dapat diakses oleh browser. 
+Bahkan, halaman web yang saling terhubung dalam satu domain yang sama juga dapat diakses.
+
+
+Cara Browser Bekerja
+Ketika user mengakses website dengan URL, browser akan membuat sebuah request yang akan dikirimkan ke web server. 
+Kemudian, web server akan mengirimkan response berisi konten-konten yang dibutuhkan oleh website dan browser 
+akan memprosesnya hingga tampil website pada perangkat user.
+
+Browser memiliki address bar yang merupakan sebuah input bagi user untuk menuliskan alamat website atau yang 
+biasa disebut Uniform Resource Locator (URL). Ada tiga bagian pada URL, yaitu protocol (https), domain name 
+(dicoding.com), dan file path (alamat halaman web yang sedang ditampilkan).
+
+
+
+
+Pada dasarnya, website dibangun dengan tiga buah fondasi utama:
+
+HTML: sebuah markup language yang menentukan struktur atau kerangka dari halaman web;
+CSS: sebuah markup language yang memberikan gaya atau styling agar halaman web ditampilkan lebih ciamik; dan
+JavaScript: satu-satunya programming language yang didukung oleh browser untuk meningkatkan interaktivitas pada 
+halaman web.

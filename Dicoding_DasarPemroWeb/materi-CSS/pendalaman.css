@@ -1,0 +1,267 @@
+/* Berikut adalah catatan yang sudah kita pelajari sejauh ini tentang styling. */
+
+/* Rule
+Sebuah aturan styling yang harus diterapkan pada elemen HTML. Dalam sebuah rule, ada selector dan deklarasi properti styling.
+
+Selector
+Bagian yang mengidentifikasi target elemen untuk menetapkan sebuah rule.
+
+Declaration
+Sebuah bagian dari rule yang terdiri dari pasangan properti dan nilainya.
+
+External Style Sheet
+Berkas terpisah yang di dalamnya hanya ada satu atau lebih rules yang akan digunakan pada website.
+
+Embedded Style Sheet
+Kumpulan rules yang dituliskan dalam berkas HTML dengan menggunakan elemen <style>.
+
+Inline Style
+Styling yang diterapkan pada elemen HTML dengan menggunakan atribut style. */
+
+
+/* Selector Dasar: Type Selector, dan Class Selector
+
+Type Selector
+Class Selector
+ID Selector
+Attribute Selector
+Universal Selector 
+
+Type Selector
+Type Selector menggunakan nama elemen sebagai target untuk diterapkannya rule. Dalam kata lain, 
+ketika menggunakan selector ini tentu rule akan diterapkan pada seluruh elemen target yang ada pada dokumen HTML. 
+Contohnya sebagai berikut */
+/* Semua elemen span */
+span {
+    color: red;
+  }
+
+/*Class Selector
+Class selector menetapkan target elemen berdasarkan nilai dari atribut class yang diterapkan pada elemennya. 
+Untuk penulisan selector-nya diawali dengan tanda titik (.) dan dilanjutkan dengan nama class-nya. 
+Contohnya berikut.*/
+.red {
+    color: red;
+  }
+  
+  .skyblue-bg {
+    background-color: skyblue;
+  }
+  
+  .fancy {
+    font-weight: bold;
+    text-shadow: 4px 4px 3px #77f;
+  }
+
+  /* Class bersifat shareable sehingga dapat diterapkan pada banyak elemen dengan tipe elemen yang berbeda-beda. 
+  Misalnya sebuah class red dapat diterapkan pada elemen paragraf dan juga heading untuk menampilkan teks 
+  berwarna merah. 
+  
+  Kita juga bisa menargetkan elemen secara spesifik yang memiliki sebuah class. Misalnya, kita ingin menerapkan 
+  gaya yang berbeda ketika menggunakan kelas fancy pada sebuah paragraf. Untuk melakukannya, kita tuliskan nama 
+  elemen target dan diikuti dengan titik (.) beserta nama kelasnya pada selector. */
+  .fancy {
+    font-weight: bold;
+    text-shadow: 4px 4px 3px #77f;
+  }
+  
+  p.fancy {
+    text-shadow: 4px 4px 3px #00c8eb;
+  }
+
+
+/* Selector Dasar: ID Selector, Attribute Selector, dan Universal Selector
+
+ID Selector
+ID selector menetapkan target elemen berdasarkan nilai dari atribut id yang diterapkan pada elemennya. 
+Mirip dengan class, atribut id dapat diterapkan pada seluruh elemen HTML dan kebanyakan atribut ini digunakan 
+untuk memberikan sebuah arti pada generic element, seperti <div> dan <span>. Namun, atribut id ini tidak 
+bersifat shareable. Artinya, nilai id harus unik dan digunakan pada satu elemen saja.
+
+Untuk menetapkan selector dengan menggunakan id, kita gunakan tanda octothorpe (#) atau lebih familiar disebut 
+dengan hash.*/
+#special {
+    background-color: skyblue;
+  }
+
+  /* Attribute Selector
+  Attribute selector merupakan cara menetapkan target elemen berdasarkan sebuah atribut yang digunakan atau bahkan 
+  bisa lebih spesifik dengan nilainya */
+
+  /* <a> element yang menerapkan href attribute */
+a[href] {
+    color: blue;
+  }
+  
+  /* <a> element yang menerapkan nilai pada href dengan awalan "#" */
+  a[href^='#'] {
+    background-color: gold;
+  }
+  
+  /* <a> element yang menerapkan nilai pada href yang mengandung teks "example" */
+  a[href*='example'] {
+    background-color: silver;
+  }
+
+  /* <a> element yang menerapkan nilai pada href yang mengandung teks "insensitive" tidak mementingkan huruf kapital*/
+a[href*='insensitive' i] {
+    color: cyan;
+  }
+  
+  /* <a> element yang menerapkan nilai pada href dengan akhiran ".org" */
+  a[href$='.org'] {
+    color: red;
+  }
+
+/*Syntax	Description
+[attr]
+
+Menargetkan elemen yang menerapkan atribut attr.
+
+[attr=value]
+
+Menargetkan elemen yang menerapkan atribut attr dengan nilai value.
+
+[attr~=value]
+
+Menargetkan elemen yang menerapkan atribut attr dan salah satu nilainya adalah value.
+
+[attr^=value]
+
+Menargetkan elemen yang menerapkan atribut attr dan nilainya diawali dengan nilai value.
+
+[attr$=value]
+
+Menargetkan elemen yang menerapkan atribut attr dan nilainya diakhiri dengan value.
+
+[attr*=value]
+
+Menargetkan elemen yang menerapkan atribut attr dan nilainya mengandung value.*/
+
+/* 
+Universal Selector
+Universal selector digunakan untuk diterapkan pada seluruh elemen. Namun, selector ini juga bisa secara spesifik 
+menargetkan sebuah elemen dengan menggabungkannya bersama selector yang lain. Berikut contohnya. */
+
+/* Menargetkan seluruh tipe elemen */
+* {
+    color: green;
+  }
+  
+  /* Menargetkan seluruh tipe elemen yang mengandung nilai "en" pada atribut lang */
+  *[lang^='en'] {
+    font-style: italic;
+  }
+  
+  /* Menargetkan seluruh tipe elemen yang memiliki nilai "warning" pada atribut class */
+  *.warning {
+    color: red;
+  }
+  
+  /* Menargetkan seluruh tipe elemen yang memiliki nilai "content" pada atribut id */
+  *#content {
+    border: 1px solid blue;
+    padding: 20px;
+  }
+
+  /* Combinators: Adjacent Sibling Selector dan General Sibling Selector
+  
+  Adjacent Sibling Selector (+)
+Adjacent Sibling Selector menggabungkan dua buah basic selector dengan menggunakan tanda + di antara keduanya.
+Adjacent Sibling Selector terdiri dari dua buah target elemen, tetapi hanya elemen kedua yang menerapkan rule 
+selama elemen tersebut dituliskan langsung setelah elemen pertama pada berkas HTML. Selain itu, kedua elemen 
+tersebut harus berada dalam induk elemen yang sama.*/
+/* Rule akan diterapkan pada elemen paragraf yang berada tepat setelah elemen img */
+img + p {
+    color: green;
+  }
+
+  
+  /* General Sibling Selector (~)
+Mirip seperti Adjacent Sibling Selector, tetapi rules akan diterapkan pada seluruh elemen kedua yang berada 
+setelah elemen pertama selama masih memiliki induk yang sama, walaupun posisi dari elemen kedua tidak berada tepat 
+setelahnya. General Sibling Selector menggunakan simbol tilda (~) untuk menetapkan elemennya. Biasanya karakter 
+ini berada di tombol keyboard sebelah kiri tombol angka “1”. */
+
+/* Rule akan diterapkan pada semua elemen <p> yang susunannya terletak setelah elemen <img> */
+img ~ p {
+    color: green;
+  }
+
+  /* Child Selector (>)
+  Child Selector menggabungkan dua buah basic selector dengan menggunakan tanda greater than (>) di antara basic 
+  selectornya. Sebagaimana contoh di atas, CSS rule akan diterapkan pada seluruh elemen paragraf yang berada dalam 
+  elemen div secara langsung. Dalam arti lain, elemen paragraf merupakan child dari elemen div, bukan hanya sebuah 
+  turunannya.*/
+  /* Rule akan diterapkan pada elemen paragraf yang merupakan child dari elemen div */
+div > p {
+    background-color: yellow;
+  }
+
+  
+  /* Descendant Selector (space)
+  Descendant Selector mirip seperti child selector, tetapi hierarkinya lebih luas karena rule akan diterapkan pada 
+  seluruh elemen yang menjadi turunannya walaupun secara tidak langsung. Basic selector pertama yang dituliskan 
+  pada selector ini menjadi induknya dan basic selector yang kedua akan menerapkan rule. Selector ini menggunakan 
+  spasi dalam menggabungkan dua basic selector. Contohnya sebagai berikut. */
+  /* Rule akan diterapkan pada elemen header yang berada tepat setelah elemen img */
+div p {
+    background-color: yellow;
+  }
+
+  /* Pseudo Selector 
+  Sebelum menjelaskan lebih detail tentang kedua selector tersebut, perlu kita ketahui pseudo selector berbeda 
+  dari selector yang sudah dibahas sebelumnya. Selector ini menargetkan elemen pada bagian yang “tidak terlihat”, 
+  seperti sifat pada elemen sehingga untuk menetapkannya tidak bisa menggunakan selector biasa. Salah satu contoh 
+  yang paling sering kita terapkan adalah :hover, pseudo selector tersebut kita gunakan untuk menetapkan rule 
+  ketika cursor diarahkan ke target elemen.
+
+  Pseudo-class Selector
+Pseudo-class merupakan sebuah class “semu” yang sebenarnya ada pada tiap elemen HTML. Dengan menggunakan selector 
+ini kita dapat memilih elemen berdasarkan class yang tidak tampak pada dokumen. Kita bisa menetapkan rule hanya 
+ketika sebuah tautan telah dikunjungi (:visited) atau ketika sebuah elemen diarahkan dengan kursor (:hover).
+
+Untuk menggunakan pseudo-class, kita gunakan tanda titik dua (:) pada basic selector dan diikuti dengan 
+pseudo-class-nya.
+*/
+/* rule akan diterapkan pada sebuah tautan yang belum pernah dikunjungi */
+a:link {
+    color: red;
+ }
+ 
+ /* rule akan diterapkan pada sebuah tautan yang sudah pernah dikunjungi */
+ a:visited {
+    color: green;
+ }
+ 
+ /* rule akan diterapkan pada sebuah tautan ketika diarahkan dengan kursor */
+ a:hover {
+    color: pink;
+ }
+ 
+ /* rule akan diterapkan pada sebuah tautan ketika ditekan */
+ a:active {
+    color:orange;
+ }
+
+
+ /* Pseudo-elemen Selector
+ Sama seperti pseudo-class, pseudo-element merupakan sebuah elemen “semu” yang sebenarnya ada, 
+ tetapi tidak tampak secara tertulis pada berkas HTML. Selector ini biasa digunakan ketika kita ingin menambahkan 
+ konten tepat sebelum dan setelah sebuah elemen paragraf. Yup, kita tidak perlu menuliskan elemen/konten baru pada 
+ berkas HTML untuk menambahkan konten. Namun, kita dapat memanfaatkan pseudo-element untuk melakukannya. 
+ Pseudo-element yang dimaksud adalah ::before dan ::after. 
+ Konten yang dibuat dengan pseudo-element dituliskan pada CSS. Contohnya, kita ingin menambahkan tanda kutip 
+ sebelum dan sesudah elemen blockquote sehingga kita cukup menuliskannya seperti berikut.*/
+ 
+ blockquote::before,
+blockquote::after {
+  content: '"';
+  font-size: 24px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+
+/* semua element bisa lihat lebih jelas dan lengkap , di website MDN Mozhila dan W3School */
+
